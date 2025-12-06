@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cert-section {
+  padding: 80px 20px;
+  background: linear-gradient(5deg, #0d0f14, #14161b);
+  text-align: center;
+}
+
+.cert-title {
+  font-size: 44px;
+  font-weight: 800;
+  color: #e9f0ff;
+  margin-bottom: 50px;
+  text-shadow: 
+      0 0 8px rgba(76,139,245,0.6),
+      0 0 16px rgba(76,139,245,0.4);
+}
+
+.cert-card {
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 14px;
+  border: 1px solid rgba(76, 139, 245, 0.5);
+  
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.55),
+    0 0 14px rgba(76,139,245,0.25);
+
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: #4c8bf5;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.7),
+    0 0 22px rgba(76,139,245,0.45);
+}
+
+.cert-img-wrapper {
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(76,139,245,0.35);
+}
+
+.cert-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.45s ease;
+}
+
+.cert-card:hover .cert-img {
+  transform: scale(1.06);
+}
+
+.cert-info {
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.cert-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4c8bf5;
+  margin-bottom: 6px;
+  text-shadow: 0 0 4px rgba(76,139,245,0.3);
+}
+
+.cert-from {
+  font-size: 14px;
+  color: #bbb;
+  margin-bottom: 4px;
+}
+
+.cert-year {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) brightness(1.5);
+}
+
+@media screen and (max-width: 768px) {
+  .cert-img-wrapper { height: 160px; }
+  .cert-name { font-size: 15px; }
+}
+
+.cert-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+}
+
+.cert-popup-img {
+  width: 80%;
+  max-width: 750px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+  animation: zoom 0.25s ease-out;
+}
+
+@keyframes zoom {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

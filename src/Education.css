@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.edu-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(to bottom, #0f0f0f, #1a1a1a); 
+}
+
+.edu-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff; 
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(0, 0, 80, 0.7), 0 0 12px rgba(59, 130, 246, 0.6);
+  animation: glowWhite 2s infinite alternate;
+}
+
+@keyframes glowWhite {
+  0% {
+    text-shadow: 2px 2px 8px rgba(73, 73, 255, 0.7);
+  }
+  50% {
+    text-shadow: 2px 2px 12px rgba(69, 69, 211, 0.9), 0 0 15px rgba(59, 130, 246, 0.8);
+  }
+  100% {
+    text-shadow: 2px 2px 8px rgba(0, 0, 80, 0.7);
+  }
+}
+
+.edu-cards {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.edu-card {
+  background: rgba(20, 20, 20, 0.85); 
+  width: 330px;
+  padding: 35px 30px;
+  border-radius: 22px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(76, 139, 245, 0.3); 
+  box-shadow: 0 10px 25px rgba(76, 139, 245, 0.15);
+  text-align: center;
+  transition: all .4s ease;
+  position: relative;
+  overflow: hidden;
+
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+  transform: translateY(0);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.edu-card:hover {
+  transform: translateY(-14px) scale(1.12);
+  background: rgba(76, 139, 245, 0.85);
+  border-color: #fff;
+  box-shadow: 0 25px 45px rgba(76, 139, 245, 0.45);
+}
+
+.edu-card::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 22px;
+  background: linear-gradient(45deg, #4c8bf5, #7d6eff);
+  opacity: 0;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+.edu-card:hover::after {
+  opacity: 1;
+}
+
+.edu-img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border: 3px solid #4c8bf5;
+  box-shadow: 0 4px 12px rgba(76, 139, 245, 0.3);
+  transition: 0.4s ease;
+}
+
+.edu-card:hover .edu-img {
+  border-color: #fff;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+}
+
+.edu-card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #f5f5f5; 
+  transition: 0.4s ease;
+}
+
+.cgpa {
+  font-size: 17px;
+  color: #4c8bf5; 
+  font-weight: 700;
+  margin-bottom: 12px;
+  transition: 0.4s ease;
+}
+
+.edu-desc {
+  font-size: 15.5px;
+  color: #ccc; 
+  line-height: 1.6;
+  margin-top: 8px;
+  transition: 0.4s ease;
+}
+
+.edu-card:hover h3,
+.edu-card:hover h6,
+.edu-card:hover .cgpa,
+.edu-card:hover .edu-desc {
+  color: #fff !important;
+}

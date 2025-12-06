@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.experience-section {
+  width: 100%;
+  padding: 70px 20px;
+  background: linear-gradient(to bottom, #0d0d0d, #151515);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 0 8px rgba(76, 139, 245, 0.8),
+    0 0 18px rgba(76, 139, 245, 0.5);
+
+  animation: headingGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes headingGlow {
+  0% { text-shadow: 0 0 8px #4c8bf5, 0 0 18px rgba(76, 139, 245, 0.6); }
+  100% { text-shadow: 0 0 14px #4c8bf5, 0 0 30px rgba(76, 139, 245, 0.9); }
+}
+
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.exp-card {
+  background: rgba(22, 22, 22, 0.85);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(76, 139, 245, 0.32);
+  box-shadow: 0 8px 25px rgba(76, 139, 245, 0.15);
+  backdrop-filter: blur(6px);
+  transition: 0.4s ease;
+
+  animation: floatBox 6s ease-in-out infinite;
+}
+
+@keyframes floatBox {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+.exp-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: #4c8bf5;
+  box-shadow: 0 0 22px rgba(76, 139, 245, 0.45);
+}
+
+.exp-top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.company-logo {
+  width: 55px;
+  height: 55px;
+  padding: 8px;
+  border-radius: 14px;
+  object-fit: contain;
+
+  background: rgba(255, 255, 255, 0.952);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+
+  filter: invert(1) brightness(2);
+  transition: 0.3s ease;
+}
+
+.exp-card:hover .company-logo {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 0 15px rgba(76, 139, 245, 0.6);
+}
+
+.exp-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4c8bf5;
+  letter-spacing: 0.3px;
+  transition: 0.3s ease;
+}
+
+.exp-card:hover h3 {
+  color: #ffffff;
+}
+
+.company {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.duration {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.exp-card ul {
+  padding-left: 20px;
+}
+
+.exp-card ul li {
+  line-height: 1.55;
+  color: #ccc;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.exp-card ul li::before {
+  content: "•";
+  color: #4c8bf5;
+  position: absolute;
+  left: -15px;
+  transition: 0.3s ease;
+}
+
+.exp-card:hover ul li::before {
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .experience-grid {
+    gap: 20px;
+  }
+}

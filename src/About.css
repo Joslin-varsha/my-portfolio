@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f0f; 
+  color: #fff;
+}
+
+.home-container {
+  height: calc(100vh - 80px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  margin-top: 0;         
+  padding-top: 90px;       
+  overflow: hidden;
+}
+
+
+.home-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
+}
+
+.home-text h3 {
+  color: #ffffff;   
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 1.6rem; 
+  letter-spacing: 1px;
+}
+
+
+.home-text h1 {
+  font-size: 4rem;          
+  font-weight: 800;
+  color: #4c8bf5;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 20px rgba(76, 139, 245, 0.6);
+}
+
+.home-text h4 {
+  color: #eaeaea;
+  font-size: 1.5rem; 
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.home-text p {
+  color: #f5f5f5;
+  max-width: 500px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-size: 1rem; 
+}
+
+
+.btn-primary,
+.btn-outline {
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #4c8bf5;
+  color: white;
+  margin-right: 15px;
+  box-shadow: 0 4px 15px rgba(76, 139, 245, 0.5);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #4c8bf5, #7d6eff);
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(76, 139, 245, 0.7);
+}
+
+.btn-outline {
+  border: 2px solid #4c8bf5;
+  color: #4c8bf5;
+}
+
+.btn-outline:hover {
+  background-color: #4c8bf5;
+  color: white;
+  transform: scale(1.05);
+}
+
+.home-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  overflow: visible;
+  padding-bottom: 50px;   
+}
+
+.home-image img {
+  width: 560px;       
+  height: auto;
+  z-index: 2;
+
+  
+  filter:
+    contrast(1.17)
+    brightness(1.15)
+    saturate(1.1)
+    drop-shadow(0px 0px 18px rgba(76, 139, 245, 0.8))
+    drop-shadow(0px 12px 25px rgba(0, 0, 0, 0.9));
+
+  image-rendering: auto;
+  transform: translate(60px, 30px);  
+  
+}
+
+.home-image::before {
+  content: "";
+  position: absolute;
+  width: 600px;       
+  height: 900px;
+  border-radius: 40px;
+  background: radial-gradient(circle at center, rgba(76, 139, 245, 0.45), rgba(0, 0, 0, 0));
+  filter: blur(70px);
+  bottom: -30px;
+  left: 40px;          
+}
+
+.home-image img:hover {
+  transform: translate(60px, 25px) scale(1.05) rotateY(5deg) rotateX(3deg);
+}
+
+
+@keyframes fadeIn {
+  0% {opacity: 0; transform: translateY(20px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+
+@media (max-width: 768px) {
+
+   .home-container {
+    height: auto;
+    padding-top: 80px;    
+    padding-bottom: 10px; 
+  }
+  .home-section {
+    flex-direction: column-reverse !important;
+    text-align: center;
+    padding: 10px;        
+    gap: 15px;            
+  }
+
+  .home-text h1 {
+    font-size: 2.6rem;           
+  }
+
+  .home-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .home-text h4 {
+    font-size: 1.2rem;
+  }
+
+
+  .home-text p {
+    padding: 0 5px;
+    margin-bottom: 15px;
+  }
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 85%;                  
+    text-align: center;
+  }
+
+
+   .home-image {
+    padding: 0;           
+    margin: 0;            
+    height: auto;
+  }
+
+  .home-image img {
+    width: 80%;
+    max-width: 300px;
+    margin-top: -150px;    
+    margin-bottom: -50px; 
+    transform: none !important;
+  }
+
+  .home-image::before {
+    width: 260px;
+    height: 260px;
+    bottom: -10px;
+    filter: blur(40px);
+  }
+}

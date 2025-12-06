@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.custom-navbar {
+  background-color: #0f0f0f !important;
+  padding: 0.7rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(76, 139, 245, 0.25);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 99%;                      
+  background: rgba(18, 20, 24, 0.40);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand small {
+  font-size: 12px;
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-left: 18px;                
+  padding: 10px 15px !important;
+  border-radius: 25px;
+  transition: 0.3s;
+  opacity: 0.95;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #4c8bf5;
+  color: white !important;
+  transform: scale(1.06);
+  opacity: 1;
+}
+
+.navbar-toggler {
+  border-color: #4c8bf5;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 991px) {
+  .navbar-nav .nav-link {
+    margin-left: 0;                
+    margin-top: 6px;
+  }
+
+  .navbar-brand {
+    margin-left: 5px;
+  }
+
+  .navbar-toggler {
+    margin-right: 10px;             
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-nav {
+    text-align: center;             
+  }
+
+  .navbar-nav .nav-link {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+@media (max-width: 1024px) {
+  .navbar-nav .nav-link {
+    margin-left: 6px;  
+    padding: 8px 12px;
+  }
+}
+.custom-navbar .container-fluid {
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+}
+
+@media (max-width: 360px) {
+
+  
+  .navbar-brand {
+    max-width: 70%;     
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .navbar-brand small {
+    display: none;
+  }
+
+  .navbar-brand .rounded-circle {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .navbar-brand span {
+    font-size: 1rem;
+  }
+
+  .navbar-toggler {
+    flex-shrink: 0;
+    margin-left: auto !important;
+  }
+}
+
